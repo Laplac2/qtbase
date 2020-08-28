@@ -195,6 +195,7 @@ public:
     }
     inline bool shouldShowPlaceholderText() const
     {
+        /* 这里会导致PlaceHolderText设置了横向居中后不显示 */
         return control->text().isEmpty() && control->preeditAreaText().isEmpty()
                 && !((alignment & Qt::AlignHCenter) && q_func()->hasFocus());
     }
